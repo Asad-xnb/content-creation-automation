@@ -346,111 +346,34 @@ The 5 posts (in the report's proven priority order):
 
 ---
 
-## STEP 8 — Send text posts to Slack (via Slack MCP tool)
+## STEP 8 — Schedule text posts to Buffer
 
-Use slack_send_message (channel_id: C0AVBBTD529) for these messages in order:
+Use the `schedule_to_buffer.js` script to schedule each post as an Idea in Buffer.
+For each post generated in Steps 3, 6, and 7, save the post text to a temporary file (e.g. `temp_post.txt`), then run:
 
-**Section A — Reddit-based posts (4 posts):**
-1. Header: `📅 *LinkedIn Content Drop — {DATE}*\n16 posts ready (4 Reddit-based + 7 AI News + 5 performance-driven). Carousel PDFs and infographics attached below.`
-2. Full COLLABORATIVE ARTICLE text
-3. Full POLL text with all 4 options
+```bash
+node schedule_to_buffer.js temp_post.txt
+```
 
-**Section B — AI News plain-text posts (7 posts):**
-4. Section header: `📰 *AI News Posts — {DATE}*\n7 plain-text posts from the linkedin-ai-news-engine:`
-5. POST 1 — Tool Spotlight (full text)
-6. POST 2 — Weekly Roundup (full text)
-7. POST 3 — Plain English Breakdown (full text)
-8. POST 4 — Unfair Advantage (full text)
-9. POST 5 — Career/Income Angle (full text)
-10. POST 6 — Hot Take (full text)
-11. POST 7 — Steal This (full text)
+Repeat this for:
+- 2 Reddit-based text posts (COLLABORATIVE ARTICLE, POLL)
+- 7 AI News plain-text posts
+- 3 Performance text posts (Contrarian, Loaded Poll, AI News + Implications)
+- The Carousel caption (PERF 4)
+- The Data Visual caption (PERF 5)
+- The main Carousel caption
+- The main Infographic caption
 
-**Section C — Performance-driven posts (5 posts, from linkedin-performance-engine):**
-12. Section header: `📈 *Performance Posts — {DATE}*\n5 posts modeled on your own top-performing analytics (your_brand report):`
-13. PERF 1 — Founder Psychology Contrarian (full text)
-14. PERF 2 — Loaded Poll (full text with all 4 options)
-15. PERF 3 — AI News + Implications (full text)
-16. PERF 4 — Story Carousel caption (the PDF + slides upload in STEP 9)
-17. PERF 5 — Data Visual caption (the PNG uploads in STEP 9)
-
-Send each post as a separate Slack message so they are individually copyable.
+*(Note: Because Buffer GraphQL `CreateIdea` media uploads require hosted URLs, the raw image/PDF files will remain local, but their captions will be scheduled as ideas in Buffer.)*
 
 ---
 
-## STEP 9 — Upload files to Slack (via API)
+## STEP 9 — Run daily newspaper HTML compiler
 
 ```bash
-upload_to_slack() {
-  local FILE_PATH="$1"
-  local FILE_NAME="$2"
-  local CAPTION="$3"
-  local FILE_SIZE=$(wc -c < "$FILE_PATH" | tr -d ' ')
-
-  UPLOAD_RESP=$(curl -s -X POST "https://slack.com/api/files.getUploadURLExternal" \
-    -H "Authorization: Bearer $SLACK_TOKEN" \
-    -F "filename=$FILE_NAME" \
-    -F "length=$FILE_SIZE")
-  local UPLOAD_URL=$(echo "$UPLOAD_RESP" | python3 -c "import json,sys; print(json.load(sys.stdin).get('upload_url',''))")
-  local FILE_ID=$(echo "$UPLOAD_RESP" | python3 -c "import json,sys; print(json.load(sys.stdin).get('file_id',''))")
-
-  curl -s -X POST "$UPLOAD_URL" -F "filename=@$FILE_PATH" > /dev/null
-
-  # Write payload to temp file to avoid shell-escaping issues with captions
-  python3 -c "
-import json, sys
-payload = json.dumps({
-  'files': [{'id': sys.argv[1], 'title': sys.argv[2]}],
-  'channel_id': sys.argv[3],
-  'initial_comment': sys.argv[4]
-})
-open('./slack_upload_payload.json', 'w').write(payload)
-" "$FILE_ID" "$FILE_NAME" "$CHANNEL" "$CAPTION"
-
-  curl -s -X POST "https://slack.com/api/files.completeUploadExternal" \
-    -H "Authorization: Bearer $SLACK_TOKEN" \
-    -H "Content-Type: application/json" \
-    -d @./slack_upload_payload.json | python3 -c "import json,sys; d=json.load(sys.stdin); print(sys.argv[1]+('  OK' if d.get('ok') else '  ERROR: '+str(d.get('error',d))))" "$FILE_NAME"
-}
-
-YDATE=$(date +%Y-%m-%d)
 DATE=$(date +%Y%m%d)
-PDF=$(ls ./carousel-routine/output/$YDATE/carousel-branded/*.pdf 2>/dev/null | head -1)
-
-upload_to_slack "$PDF" "$(basename $PDF)" "━━━ CAROUSEL PDF ━━━\n\n[CAROUSEL_CAPTION]"
-
-# Upload individual slide PNGs in order
-PDF_DIR="./carousel-routine/output/$YDATE/carousel-branded"
-if [ -d "$PDF_DIR" ]; then
-  for SLIDE_PNG in $(ls "$PDF_DIR"/slide-*.png 2>/dev/null | sort); do
-    SLIDE_NAME=$(basename "$SLIDE_PNG")
-    SLIDE_NUM=$(echo "$SLIDE_NAME" | cut -d'-' -f2 | cut -d'.' -f1)
-    upload_to_slack "$SLIDE_PNG" "$SLIDE_NAME" "Slide $SLIDE_NUM"
-  done
-fi
-
-upload_to_slack "./linkedin-infographic-${DATE}.png" "linkedin-infographic.png" "━━━ INFOGRAPHIC ━━━\n\n[INFOGRAPHIC_CAPTION]"
-
-# --- Performance-engine visuals (from STEP 7) ---
-PERF_PDF=$(ls ./carousel-routine/output/$YDATE/carousel-performance/*.pdf 2>/dev/null | head -1)
-if [ -n "$PERF_PDF" ]; then
-  upload_to_slack "$PERF_PDF" "$(basename $PERF_PDF)" "━━━ PERFORMANCE CAROUSEL ━━━\n\n[PERF_CAROUSEL_CAPTION]"
-  PERF_DIR="./carousel-routine/output/$YDATE/carousel-performance"
-  for SLIDE_PNG in $(ls "$PERF_DIR"/slide-*.png 2>/dev/null | sort); do
-    SLIDE_NAME=$(basename "$SLIDE_PNG")
-    SLIDE_NUM=$(echo "$SLIDE_NAME" | cut -d'-' -f2 | cut -d'.' -f1)
-    upload_to_slack "$SLIDE_PNG" "perf-$SLIDE_NAME" "Performance slide $SLIDE_NUM"
-  done
-fi
-
-if [ -f "./linkedin-performance-infographic-${DATE}.png" ]; then
-  upload_to_slack "./linkedin-performance-infographic-${DATE}.png" "linkedin-performance-infographic.png" "━━━ PERFORMANCE DATA VISUAL ━━━\n\n[PERF_INFOGRAPHIC_CAPTION]"
-fi
-
-# Run daily newspaper HTML compiler
 python3 generate_daily_paper.py "$DATE"
 ```
-
-Replace [CAROUSEL_CAPTION] and [INFOGRAPHIC_CAPTION] with the actual captions from Step 3, and [PERF_CAROUSEL_CAPTION] and [PERF_INFOGRAPHIC_CAPTION] with the performance captions from Step 7.
 
 ---
 
@@ -463,12 +386,11 @@ Daily LinkedIn Content — {DATE}
 Reddit-based posts (4):
 ...
 ✓ Interactive Newspaper HTML → Generated (Downloads)
-✓ Carousel → Slack (PDF + 7 PNGs uploaded)
-✓ Infographic → Slack (PNG uploaded)
+✓ Carousel → Captions scheduled to Buffer
+✓ Infographic → Caption scheduled to Buffer
 Performance-driven posts (5):
-✓ Contrarian + Loaded Poll + AI-news (text) → Slack
-✓ Story carousel → Slack (PDF + PNGs uploaded)
-✓ Data visual → Slack (PNG uploaded)
+✓ Contrarian + Loaded Poll + AI-news (text) → Scheduled to Buffer
+✓ Story carousel → Caption scheduled to Buffer
+✓ Data visual → Caption scheduled to Buffer
 ...
 ```
-
