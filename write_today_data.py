@@ -16,7 +16,7 @@ Moving from isolation to shared reality lowers the mental load and prevents burn
 
 How do solo founders build a safe support network that does not compromise their business reputation?
 
-Follow @your_handle for more insights.
+Follow @receptralink for more insights.
 
 ==================================================
 2. POLL
@@ -72,7 +72,7 @@ Spending weeks building an idea without validation leads to wasted time. Success
 
 How do you validate a new product idea before building?
 
-Follow @your_handle for more.
+Follow @receptralink for more.
 
 ==================================================
 4. INFOGRAPHIC
@@ -85,7 +85,7 @@ Mistral is rumored to be raising a new funding round at a twenty billion dollar 
 
 What is the biggest hurdle for new AI firms raising capital at high valuations?
 
-Follow @your_handle for more data.
+Follow @receptralink for more data.
 
 ==================================================
 5. POST 1
@@ -100,7 +100,7 @@ Local brands can launch video campaigns on social platforms, reaching new custom
 
 Will ultra cheap video tools help small local shops compete with national brands?
 
-Follow @your_handle for more tools.
+Follow @receptralink for more tools.
 
 Tool featured: Avataar Video AI
 Source: TechCrunch AI
@@ -144,7 +144,7 @@ The main limitation is that real world testing still requires physical validatio
 
 How soon will physical AI systems run manufacturing plants without human supervision?
 
-Follow @your_handle for more breakdowns.
+Follow @receptralink for more breakdowns.
 
 Tools/stories featured: Prometheus (Jeff Bezos)
 Source: TechCrunch AI
@@ -159,18 +159,18 @@ Generating video content at half a cent per second is a massive advantage for bo
 
 Most visual tools charge high monthly subscription fees before a startup has any paying users. This burns through early capital.
 
-Startups can use pay-as-you-go distilled models to generate ads. Platforms like your_brand help connect founders with these cost-effective infrastructure tools.
+Startups can use pay-as-you-go distilled models to generate ads. Platforms like receptralink help connect founders with these cost-effective infrastructure tools.
 
 Solo founders can run video ad campaigns, test different messages, and find product market fit without software debt.
 
 What is your preferred budget-friendly tool for creating startup marketing videos?
 
-Follow @your_handle for more advantages.
+Follow @receptralink for more advantages.
 
-Tools/stories featured: Avataar Video AI, your_brand
+Tools/stories featured: Avataar Video AI, receptralink
 Source: TechCrunch AI
 Archetype: Unfair Advantage | Emotion: WOW
-Why this works: Connects a cheap video generation tool with startup launch workflows and naturally mentions your_brand.
+Why this works: Connects a cheap video generation tool with startup launch workflows and naturally mentions receptralink.
 Word count: 118 words
 
 ==================================================
@@ -201,18 +201,18 @@ The upcoming public market listings for massive space and AI firms is a stress t
 
 Private investors have marked up company valuations for years. When these firms list publicly, the market often corrects these numbers down.
 
-Watch how public markets value AI companies. Platforms like your_brand track how these listings affect early stage startup valuations and VC funding access.
+Watch how public markets value AI companies. Platforms like receptralink track how these listings affect early stage startup valuations and VC funding access.
 
 More realistic valuations bring stability to the startup market, making it easier for founders to raise rounds based on actual revenue.
 
 Will public market listings lower the inflated valuations of private AI firms?
 
-Follow @your_handle for more takes.
+Follow @receptralink for more takes.
 
-Tools/stories featured: SpaceX, OpenAI, Anthropic, your_brand
+Tools/stories featured: SpaceX, OpenAI, Anthropic, receptralink
 Source: TechCrunch AI
 Archetype: Hot Take | Emotion: THINK
-Why this works: Offers a contrarian take on public listings and naturally mentions your_brand.
+Why this works: Offers a contrarian take on public listings and naturally mentions receptralink.
 Word count: 119 words
 
 ==================================================
@@ -312,7 +312,7 @@ infographic_data = {
   "date_label": "June 2026 Report",
   "takeaway_num": "€20B",
   "takeaway_text": "is the rumored new valuation for Mistral, doubling its series C valuation from last year.",
-  "source": "Source: TechCrunch AI | @your_handle",
+  "source": "Source: TechCrunch AI | @receptralink",
   "bars": [
     {
       "label": "2023 Launch (Seed) - €0.2B",
@@ -322,7 +322,7 @@ infographic_data = {
     {
       "label": "Late 2023 Series A - €2.0B",
       "value": "10%",
-      "color": "#5A5A5A"
+      "color": "#A0A8B0"
     },
     {
       "label": "2024 Series C - €11.7B",
@@ -332,7 +332,7 @@ infographic_data = {
     {
       "label": "2026 Rumored Round - €20.0B",
       "value": "100%",
-      "color": "#E63946"
+      "color": "#16AA79"
     }
   ]
 }

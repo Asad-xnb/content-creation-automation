@@ -174,7 +174,7 @@ async function fillTimeComboboxShadow(page, selector, value) {
 
 How do you validate a new product idea before building?
 
-Follow @your_handle for more.`,
+Follow @receptralink for more.`,
       assetPath: '/Users/prithal/3d website/linkedin-automation-routine/slack_downloads/linkedin-carousel-2026-06-12.pdf',
       title: 'The validation mistake that kills startups'
     },
@@ -187,7 +187,7 @@ Follow @your_handle for more.`,
 
 What is the biggest hurdle for new AI firms raising capital at high valuations?
 
-Follow @your_handle for more data.`,
+Follow @receptralink for more data.`,
       assetPath: '/Users/prithal/3d website/linkedin-automation-routine/slack_downloads/linkedin-infographic.png'
     },
     {
@@ -205,7 +205,7 @@ Moving from isolation to shared reality lowers the mental load and prevents burn
 
 How do solo founders build a safe support network that does not compromise their business reputation?
 
-Follow @your_handle for more insights.`
+Follow @receptralink for more insights.`
     },
     {
       id: 4,
@@ -241,7 +241,7 @@ Local brands can launch video campaigns on social platforms, reaching new custom
 
 Will ultra cheap video tools help small local shops compete with national brands?
 
-Follow @your_handle for more tools.`
+Follow @receptralink for more tools.`
     },
     {
       id: 6,
@@ -277,7 +277,7 @@ The main limitation is that real world testing still requires physical validatio
 
 How soon will physical AI systems run manufacturing plants without human supervision?
 
-Follow @your_handle for more breakdowns.`
+Follow @receptralink for more breakdowns.`
     },
     {
       id: 8,
@@ -288,13 +288,13 @@ Follow @your_handle for more breakdowns.`
 
 Most visual tools charge high monthly subscription fees before a startup has any paying users. This burns through early capital.
 
-Startups can use pay-as-you-go distilled models to generate ads. Platforms like your_brand help connect founders with these cost-effective infrastructure tools.
+Startups can use pay-as-you-go distilled models to generate ads. Platforms like receptralink help connect founders with these cost-effective infrastructure tools.
 
 Solo founders can run video ad campaigns, test different messages, and find product market fit without software debt.
 
 What is your preferred budget-friendly tool for creating startup marketing videos?
 
-Follow @your_handle for more advantages.`
+Follow @receptralink for more advantages.`
     },
 
     // ===== DAY 3 — June 15, 2026 =====
@@ -324,13 +324,13 @@ Save this post to reference hardware trends.`
 
 Private investors have marked up company valuations for years. When these firms list publicly, the market often corrects these numbers down.
 
-Watch how public markets value AI companies. Platforms like your_brand track how these listings affect early stage startup valuations and VC funding access.
+Watch how public markets value AI companies. Platforms like receptralink track how these listings affect early stage startup valuations and VC funding access.
 
 More realistic valuations bring stability to the startup market, making it easier for founders to raise rounds based on actual revenue.
 
 Will public market listings lower the inflated valuations of private AI firms?
 
-Follow @your_handle for more takes.`
+Follow @receptralink for more takes.`
     },
     {
       id: 11,

@@ -438,7 +438,7 @@ def generate_paper(date_compact=None):
         <div class="header-top">
             <span class="issue-no">ISSUE NO. {date_compact}</span>
             <h1 class="logo">The Daily Founder</h1>
-            <span class="source-tag">your brand</span>
+            <span class="source-tag">Receptralink</span>
         </div>
         <div class="header-meta">
             <span>DATE: {date_str}</span>

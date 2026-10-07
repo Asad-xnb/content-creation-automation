@@ -19,7 +19,7 @@ The trend this week is clear: AI is moving from a chatbot helper to automated sy
 
 Which of these updates will have the biggest impact on your team's workflow this quarter?
 
-Follow @your_handle for daily data drops"""
+Follow @receptralink for daily data drops"""
 
 res = subprocess.run(["agent-browser", "--session-name", "linkedin_bot", "type", "@e249", text], capture_output=True, text=True)
 print("STDOUT:", res.stdout)

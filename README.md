@@ -1,8 +1,8 @@
 # Daily LinkedIn Posts Pipeline
 
-> Complete automation system for generating, building, and scheduling LinkedIn content for your brand: 16 posts per day (4 Reddit-based + 7 AI news + 5 report-driven performance posts) with carousel PDFs, infographic PNGs, and Slack delivery.
+> Complete automation system for generating, building, and scheduling LinkedIn content for Receptralink: 16 posts per day (4 Reddit-based + 7 AI news + 5 report-driven performance posts) with carousel PDFs, infographic PNGs, and Slack delivery.
 
-> **Content positioning — the "Varun Mayya of LinkedIn."** As of 2026-06-14, every stream is governed by [`content-doctrine.md`](content-doctrine.md): we write for ambitious generalists who want to know where AI is going and how to get ahead, framed around AI's impact on work, income, skills, and the future. Technical tutorials, indie-hacker tactics, and tool how-tos are out (they underperform); future-of-work, opportunity, and accessible explainers are in. your_brand stays the brand. The doctrine overrides older topic guidance in any skill file.
+> **Content positioning — the "Varun Mayya of LinkedIn."** As of 2026-06-14, every stream is governed by [`content-doctrine.md`](content-doctrine.md): we write for ambitious generalists who want to know where AI is going and how to get ahead, framed around AI's impact on work, income, skills, and the future. Technical tutorials, indie-hacker tactics, and tool how-tos are out (they underperform); future-of-work, opportunity, and accessible explainers are in. receptralink stays the brand. The doctrine overrides older topic guidance in any skill file.
 
 ---
 
@@ -72,8 +72,8 @@ cd carousel-routine && npm install
 | `daily-linkedin-posts/SKILL.md` | Master orchestration skill — the full pipeline steps |
 | `commands/linkedin-content.md` | Reddit post writing rules, output format, banned words |
 | `skills/linkedin-ai-news-engine/SKILL.md` | AI news engine — 7 archetype post generation |
-| `skills/linkedin-performance-engine/SKILL.md` | Performance engine — 5 posts modeled on @your_handle's own analytics |
-| `your_brand_linkedin_content_report.md` | Live LinkedIn analytics report — the performance engine reads this each run; drop in an updated report to refresh the winning patterns |
+| `skills/linkedin-performance-engine/SKILL.md` | Performance engine — 5 posts modeled on @receptralink's own analytics |
+| `receptralink_linkedin_content_report.md` | Live LinkedIn analytics report — the performance engine reads this each run; drop in an updated report to refresh the winning patterns |
 | `skills/branded-carousel/SKILL.md` | Carousel design system, slide layouts, brand research |
 | `skills/branded-carousel/FORMATS.md` | 6 carousel format templates (Brand Story, Listicle, etc.) |
 | `skills/illustration-formats/SKILL.md` | 5 infographic formats (Ranked Bars, Donut, Timeline, etc.) |
@@ -110,7 +110,7 @@ cd carousel-routine && npm install
 | `carousel-routine/render-pdf.js` | Puppeteer: render slides directly to PDF |
 | `carousel-routine/compile_pdf.js` | Combine slide PNGs into single PDF |
 | `carousel-routine/screenshot_all.js` | Screenshot all 7 slide HTML files |
-| `carousel-routine/brand-kit.html` | your brand brand design system HTML |
+| `carousel-routine/brand-kit.html` | Receptralink brand design system HTML |
 | `carousel-routine/package.json` | Node dependencies (puppeteer, pdf-lib) |
 
 ### 📊 Infographic Generation
@@ -229,7 +229,7 @@ node schedule_all_posts.cjs
 
 ### ⚠️ Cadence caveat (from the analytics report)
 
-The `your_brand_linkedin_content_report.md` is explicit that the account's current ~25-35 posts/week is **suppressing reach** and recommends **≤7 posts/week**. This pipeline produces 16 posts/day, which runs against that finding. The performance posts were added per an explicit "add on top" decision; the volume-reduction recommendation is intentionally **deferred, not resolved.** Revisit whether to cut overall cadence before scaling output further.
+The `receptralink_linkedin_content_report.md` is explicit that the account's current ~25-35 posts/week is **suppressing reach** and recommends **≤7 posts/week**. This pipeline produces 16 posts/day, which runs against that finding. The performance posts were added per an explicit "add on top" decision; the volume-reduction recommendation is intentionally **deferred, not resolved.** Revisit whether to cut overall cadence before scaling output further.
 
 ---
 

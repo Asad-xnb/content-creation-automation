@@ -5,7 +5,7 @@ Writes 7 slides to temp/carousel-branded/ (assets captured there by capture_sour
 import os
 BASE = os.path.dirname(os.path.abspath(__file__))
 ACCENT = "#7C3AED"
-KICK = "your brand / the shift"
+KICK = "Receptralink / the shift"
 OUTDIR_NAME = "carousel-branded"
 
 PAGE = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/>
@@ -30,7 +30,7 @@ body{{width:1080px;height:1080px;overflow:hidden;background:#F8F7F3;color:#111;f
 .win{{position:absolute;left:70px;right:70px;bottom:78px;height:430px;border-radius:18px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,0.18);background:#fff;z-index:4;border:1px solid rgba(0,0,0,0.06)}}
 .winbar{{height:40px;background:#ECEAE5;display:flex;align-items:center;gap:9px;padding:0 18px}}
 .wd{{width:12px;height:12px;border-radius:50%}}
-.winurl{{margin-left:14px;font-size:14px;color:#8A8275;font-weight:600}}
+.winurl{{margin-left:14px;font-size:14px;color:#8A929A;font-weight:600}}
 .winshot{{height:calc(100% - 40px);overflow:hidden}}
 .winshot img{{width:100%;height:100%;object-fit:cover;object-position:center top}}
 .center{{position:absolute;top:300px;left:70px;right:70px;z-index:5}}
@@ -42,7 +42,7 @@ body{{width:1080px;height:1080px;overflow:hidden;background:#F8F7F3;color:#111;f
 .pill em{{font-family:'Instrument Serif',serif;font-style:italic;color:{accent};font-weight:400;margin-left:6px}}
 </style></head><body>
 <div class="header"><div class="hleft"><span class="dot"></span>{kick}</div>
-<div class="hright"><div class="fw">your brand</div><div class="badge">{num}</div></div></div>
+<div class="hright"><div class="fw">Receptralink</div><div class="badge">{num}</div></div></div>
 {main}
 <div class="bottom">{bottom}</div>
 </body></html>"""

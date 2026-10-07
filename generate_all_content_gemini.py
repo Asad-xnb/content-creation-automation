@@ -197,7 +197,7 @@ Start directly with the hook. No titles.
         "prompt": f"""Write POST 4 (Unfair Advantage).
 Tool: Theker's generalist factory robot.
 Description: Theker raised 85 million dollars to build robots that don't specialize in a single task, allowing small factories to deploy them for arbitrary manual operations that traditionally required custom, expensive automation programming.
-MUST naturally mention "your_brand" in the body text or call to action.
+MUST naturally mention "receptralink" in the body text or call to action.
 Archetype: Unfair Advantage | Emotion: WOW.
 Start directly with the hook. No titles.
 """
@@ -216,7 +216,7 @@ Start directly with the hook. No titles.
         "prompt": f"""Write POST 6 (Hot Take).
 Topic: Meta's new AI unit being called a "soul-crushing gulag" by its engineers.
 Hot Take: The race for AGI has created a toxic work culture where engineers are treated as disposable inputs. True startup moats are built on sustainable engineering cultures and distribution, not by burning out talent in a compute race.
-MUST naturally mention "your_brand" in the body text.
+MUST naturally mention "receptralink" in the body text.
 Archetype: Hot Take | Emotion: THINK.
 Start directly with the hook. No titles.
 """
@@ -332,7 +332,7 @@ Your JSON must strictly follow this structure:
     "HEADLINE_PART_1": "Build the future",
     "HEADLINE_PART_2": "and protect your stack",
     "HEADLINE_EMPHASIS": "BUILD",
-    "SUBHEAD": "Follow @your_handle for more breakdowns on startup loops and strategy."
+    "SUBHEAD": "Follow @receptralink for more breakdowns on startup loops and strategy."
   }}
 }}
 Generate slide JSON configs reflecting today's Carousel content. Make sure all values are filled in.
@@ -377,13 +377,13 @@ Your JSON must strictly follow this structure:
   "date_label": "2025 Microsoft Report",
   "takeaway_num": "2 Mins",
   "takeaway_text": "is the average time between interruptions for a typical employee, leading to severe focus fragmentation.",
-  "source": "Source: Microsoft Work Trend Index | @your_handle",
+  "source": "Source: Microsoft Work Trend Index | @receptralink",
   "bars": [
-    {{ "label": "Daily Interruptions (Meetings/Chats) - 275", "value": "91%", "color": "#E63946" }},
+    {{ "label": "Daily Interruptions (Meetings/Chats) - 275", "value": "91%", "color": "#16AA79" }},
     {{ "label": "Lack of Time/Energy to Finish Work", "value": "80%", "color": "#D9785B" }},
     {{ "label": "Teams Messages Received Daily - 153", "value": "51%", "color": "#E8A33D" }},
     {{ "label": "Checking Email Before 6:00 AM", "value": "40%", "color": "#5E6AD2" }},
-    {{ "label": "Emails Received Daily - 117", "value": "39%", "color": "#5A5A5A" }}
+    {{ "label": "Emails Received Daily - 117", "value": "39%", "color": "#A0A8B0" }}
   ]
 }}
 Generate a similar JSON for the infographic based on the Microsoft Work Trend Index data.
@@ -412,7 +412,7 @@ if infographic_json_str:
 
 # Now generate the 5 Performance posts
 print("Generating 5 Performance Posts...")
-performance_system_prompt = f"""You are the your brand Performance Engine. Write 5 report-driven posts reverse-engineered from actual analytics.
+performance_system_prompt = f"""You are the Receptralink Performance Engine. Write 5 report-driven posts reverse-engineered from actual analytics.
 {writing_rules}
 """
 

@@ -1,11 +1,11 @@
 ---
 name: branded-carousel
-description: Creates a single branded LinkedIn carousel (7 slides, 1080×1080 PNG + PDF) from a given topic, post, or AI news story. Automatically fetches official logos, product screenshots, and brand colors from the source website, then generates slides using the your brand design system with the subject brand's visual identity woven in.
+description: Creates a single branded LinkedIn carousel (7 slides, 1080×1080 PNG + PDF) from a given topic, post, or AI news story. Automatically fetches official logos, product screenshots, and brand colors from the source website, then generates slides using the Receptralink design system with the subject brand's visual identity woven in.
 argument-hint: "[post text OR topic + source URL, e.g. 'Claude Design — https://anthropic.com/news/claude-design-anthropic-labs']"
 allowed-tools: WebFetch, WebSearch, Browser, Bash, Read, Write, ImageGeneration
 ---
 
-You are the your brand **branded carousel engine**. You produce one polished, on-brand LinkedIn carousel per run — 7 slides that blend the **your brand dark design system** with the **official branding of the featured product/company**.
+You are the Receptralink **branded carousel engine**. You produce one polished, on-brand LinkedIn carousel per run — 7 slides that blend the **Receptralink dark design system** with the **official branding of the featured product/company**.
 
 Follow every phase in strict order. Do NOT skip phases.
 
@@ -234,7 +234,7 @@ Raw website screenshots are busy. Frame each one as an intentional product embed
   overflow:hidden; box-shadow:0 30px 70px rgba(0,0,0,0.18); background:#fff; border:1px solid rgba(0,0,0,0.06); }
 .winbar { height:40px; background:#ECEAE5; display:flex; align-items:center; gap:9px; padding:0 18px; }
 .wd { width:12px; height:12px; border-radius:50%; }   /* 3 dots: #FF5F57 #FEBC2E #28C840 */
-.winurl { margin-left:14px; font-size:14px; color:#8A8275; font-weight:600; }  /* the source domain */
+.winurl { margin-left:14px; font-size:14px; color:#8A929A; font-weight:600; }  /* the source domain */
 .winshot { height:calc(100% - 40px); overflow:hidden; }
 .winshot img { width:100%; height:100%; object-fit:cover; object-position:center top; }
 ```
@@ -530,7 +530,7 @@ Select the color and use it as `{{BRAND_COLOR}}` in all CSS blocks below.
       {{HEADER_LABEL}}
     </div>
     <div class="header-right">
-      <div class="fw-text">your brand / 2026</div>
+      <div class="fw-text">Receptralink / 2026</div>
       <div class="slide-badge">01</div>
     </div>
   </div>
@@ -658,7 +658,7 @@ Select the color and use it as `{{BRAND_COLOR}}` in all CSS blocks below.
       {{HEADER_LABEL}}
     </div>
     <div class="header-right">
-      <div class="fw-text">your brand / 2026</div>
+      <div class="fw-text">Receptralink / 2026</div>
       <div class="slide-badge">{{SLIDE_NUM}}</div>
     </div>
   </div>
@@ -729,7 +729,7 @@ Select the color and use it as `{{BRAND_COLOR}}` in all CSS blocks below.
       {{HEADER_LABEL}}
     </div>
     <div class="header-right">
-      <div class="fw-text">your brand / 2026</div>
+      <div class="fw-text">Receptralink / 2026</div>
       <div class="slide-badge">06</div>
     </div>
   </div>
@@ -794,7 +794,7 @@ Select the color and use it as `{{BRAND_COLOR}}` in all CSS blocks below.
       THE LESSON
     </div>
     <div class="header-right">
-      <div class="fw-text">your brand / 2026</div>
+      <div class="fw-text">Receptralink / 2026</div>
       <div class="slide-badge">07</div>
     </div>
   </div>
@@ -805,7 +805,7 @@ Select the color and use it as `{{BRAND_COLOR}}` in all CSS blocks below.
     <div class="subhead">{{SUBHEAD}}</div>
   </div>
   <div class="bottom-area">
-    <div class="s7-pill">follow your brand for daily <em>frameworks.</em></div>
+    <div class="s7-pill">follow Receptralink for daily <em>frameworks.</em></div>
   </div>
 </body>
 </html>
@@ -872,7 +872,7 @@ Open each rendered PNG to verify:
 ### 6B: Print Final Report
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-your brand — Branded Carousel — YYYY-MM-DD
+Receptralink — Branded Carousel — YYYY-MM-DD
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Product:     [PRODUCT_NAME]
 Company:     [COMPANY_NAME]
@@ -911,7 +911,7 @@ Use these as starting points. Always verify against the live website.
 | Canva | #00C4CB (teal) | #7D2AE8 (purple) | #F0FFFE (light teal) |
 | Adobe | #FF0000 (red) | #2C2C2C (dark gray) | #FAFAFA (light) |
 | Stability AI | #7C3AED (purple) | #A855F7 (light purple) | #FAF5FF (lavender) |
-| Nvidia | #76B900 (green) | #1A1A1A (black) | #F5F5F5 (light) |
+| Nvidia | #76B900 (green) | #FFFFFF (black) | #F5F5F5 (light) |
 
 ---
 
@@ -928,7 +928,7 @@ Use these as starting points. Always verify against the live website.
 
 ## DESIGN PRINCIPLES (non-negotiable)
 
-1. **Brand blending, not brand takeover.** The carousel is a your brand product with the guest brand's DNA woven in — not a reskin of the guest brand's website.
+1. **Brand blending, not brand takeover.** The carousel is a Receptralink product with the guest brand's DNA woven in — not a reskin of the guest brand's website.
 2. **Official assets only.** Never generate fake logos. Use screenshots, SVG recreations of marks, or text-based logo treatments.
 3. **Cream-first.** All slides use #F8F7F3 as the base cream. Brand colors appear as accents: star icons, badges, serif italics, and divider lines.
 4. **Huge Typography.** Text is the primary design element. Headlines should be massive with tight tracking (-2px to -3px).

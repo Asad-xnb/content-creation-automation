@@ -46,14 +46,14 @@ You do not need another course. You need to take the one task you dread most thi
 
 What is the one task you would hand to AI tomorrow if you stopped waiting to feel ready?
 
-Follow @your_handle for more."""
+Follow @receptralink for more."""
 
 CAROUSEL_CAPTION = """━━━ CAROUSEL — "5 jobs AI is quietly rewriting" ━━━
 
 AI is not deleting jobs. It is quietly rewriting the tasks inside them.
 The asset-making, the drafting, the number crunching is going to AI. The judgment, the taste, and knowing what to build is becoming the whole job.
 Which half of your work just changed?
-Save this and follow @your_handle for more."""
+Save this and follow @receptralink for more."""
 
 SDIR = "carousel-routine/output/2026-06-14/carousel-sample"
 

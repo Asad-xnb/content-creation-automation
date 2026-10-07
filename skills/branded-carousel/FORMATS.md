@@ -39,11 +39,11 @@ Mark the chosen format at the top of every Art Direction Brief.
 ## Shared design system (all formats use these)
 
 **Palette options (pick one per carousel based on subject):**
-- Warm cream: bg `#F5EFE8`, accent `#E63946`, ink `#1A1A1A`, soft `#FAF7F2`
-- Mustard: bg `#F5EFE8`, accent `#E8A33D`, ink `#1A1A1A`, soft `#FFF4E0`  
-- Forest: bg `#F0EBE3`, accent `#2D6A4F`, ink `#1A1A1A`, soft `#E8E2D8`
-- Navy: bg `#F5EFE8`, accent `#1E3A5F`, ink `#1A1A1A`, soft `#E8EEF4`
-- Dark mode: bg `#1A1A1A`, accent `#E63946`, ink `#F5EFE8`, soft `#2A2A2A`
+- Warm cream: bg `#0B0F12`, accent `#16AA79`, ink `#FFFFFF`, soft `#FAF7F2`
+- Mustard: bg `#0B0F12`, accent `#E8A33D`, ink `#FFFFFF`, soft `#FFF4E0`  
+- Forest: bg `#F0EBE3`, accent `#2D6A4F`, ink `#FFFFFF`, soft `#E8E2D8`
+- Navy: bg `#0B0F12`, accent `#1E3A5F`, ink `#FFFFFF`, soft `#E8EEF4`
+- Dark mode: bg `#FFFFFF`, accent `#16AA79`, ink `#0B0F12`, soft `#2A2A2A`
 
 **Typography:**
 - Body sans: Inter (400, 500, 600, 700, 800, 900)

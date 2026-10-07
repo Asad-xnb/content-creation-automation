@@ -1,7 +1,7 @@
 {
   "name": "carousel-routine",
   "version": "1.0.0",
-  "description": "your brand daily LinkedIn carousel renderer",
+  "description": "Receptralink daily LinkedIn carousel renderer",
   "main": "render.js",
   "scripts": {
     "render": "node render.js",

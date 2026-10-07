@@ -1,6 +1,6 @@
 ---
 name: daily-linkedin-posts
-description: Generates 4 LinkedIn posts from Reddit trends + branded carousel + 7 plain-text AI news posts + 5 report-driven performance posts (modeled on @your_handle's own analytics via linkedin-performance-engine), sends all text posts + PDFs + infographics to #linkedin-content on Slack
+description: Generates 4 LinkedIn posts from Reddit trends + branded carousel + 7 plain-text AI news posts + 5 report-driven performance posts (modeled on @receptralink's own analytics via linkedin-performance-engine), sends all text posts + PDFs + infographics to #linkedin-content on Slack
 ---
 
 
@@ -95,7 +95,7 @@ Read `./skills/illustration-formats/SKILL.md` and apply its decision tree based 
 
 **Format ban check:** If the naturally-selected format is in BANNED_FORMATS, pick the next-best format that fits the data shape (e.g. if data is a ranked list and RANKED_BARS is banned, check if it can be reframed as a COMPARISON_SPLIT or HERO_NUMBER). Do not use a banned format just because it's the obvious fit — forced variety makes the feed look richer.
 
-Record the chosen format and topic as INFOGRAPHIC_FORMAT and INFOGRAPHIC_TOPIC. Step 3 will generate the HTML using this format's design recipe (warm cream bg `#F5EFE8`, coral red `#E63946`, Inter sans + Instrument Serif italic accents, `@your_handle` in footer).
+Record the chosen format and topic as INFOGRAPHIC_FORMAT and INFOGRAPHIC_TOPIC. Step 3 will generate the HTML using this format's design recipe (warm cream bg `#0B0F12`, coral red `#16AA79`, Inter sans + Instrument Serif italic accents, `@receptralink` in footer).
 
 ---
 
@@ -325,13 +325,13 @@ Execute the full skill (Phase 0 through Phase 5). Save the complete output to `.
 
 ## STEP 7 — Generate 5 report-driven performance posts (linkedin-performance-engine)
 
-Run the linkedin-performance-engine skill — the data-driven stream modeled on @your_handle's OWN top-performing analytics:
+Run the linkedin-performance-engine skill — the data-driven stream modeled on @receptralink's OWN top-performing analytics:
 
 ```bash
 cat ./skills/linkedin-performance-engine/SKILL.md
 ```
 
-Execute the full skill (Phase 0 through Phase 5). It reads `./your_brand_linkedin_content_report.md` fresh each run, so the winning patterns update automatically whenever the user drops in a newer report. Save the complete output to `./performance_posts_$(date +%Y%m%d).txt`.
+Execute the full skill (Phase 0 through Phase 5). It reads `./receptralink_linkedin_content_report.md` fresh each run, so the winning patterns update automatically whenever the user drops in a newer report. Save the complete output to `./performance_posts_$(date +%Y%m%d).txt`.
 
 The 5 posts (in the report's proven priority order):
 - PERF 1 — Founder Psychology Contrarian (text) — the report's #1 format, not produced anywhere else in the pipeline

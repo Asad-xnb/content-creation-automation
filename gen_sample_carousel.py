@@ -37,13 +37,13 @@ body{{width:1080px;height:1080px;overflow:hidden;background:#F8F7F3;color:#111;f
 .cta-content{{position:absolute;top:300px;left:70px;right:70px;z-index:5}}
 </style></head><body>
 <div class="header"><div class="hleft"><span class="dot"></span>{kicker}</div>
-<div class="hright"><div class="fw">your brand / 2026</div><div class="badge">{num}</div></div></div>
+<div class="hright"><div class="fw">Receptralink / 2026</div><div class="badge">{num}</div></div></div>
 {main}
 <div class="bottom">{bottom}</div>
 </body></html>"""
 
 ACCENT = "#5E6AD2"
-KICKER = "your brand / future of work"
+KICKER = "Receptralink / future of work"
 
 SLIDES = [
     {"num":"01","hsize":62,"img":"hero.jpg","tag":"the shift","kick":"Future of work",

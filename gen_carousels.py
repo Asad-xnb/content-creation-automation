@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate your brand cream-design carousel slides (typography-forward) for both
+"""Generate Receptralink cream-design carousel slides (typography-forward) for both
 the branded carousel and the performance carousel. Writes slide-01..07.html into
 carousel-routine/temp/<dir>/."""
 import os
@@ -33,7 +33,7 @@ body{{width:1080px;height:1080px;overflow:hidden;background:#F8F7F3;color:#111;f
 .pill em{{font-family:'Instrument Serif',serif;font-style:italic;color:{accent};font-weight:400;margin-left:6px}}
 </style></head><body>
 <div class="header"><div class="hleft"><span class="dot"></span>{kicker}</div>
-<div class="hright"><div class="fw">your brand / 2026</div><div class="badge">{num}</div></div></div>
+<div class="hright"><div class="fw">Receptralink / 2026</div><div class="badge">{num}</div></div></div>
 <div class="content">{inner}</div>
 <div class="bottom">{bottom}</div>
 </body></html>"""
@@ -52,7 +52,7 @@ def build(slide, accent, kicker):
     if slide.get("body"):
         inner += f'<div class="body">{slide["body"]}</div>'
     if slide.get("cta"):
-        bottom = '<div class="pill">follow @your_handle for daily <em>frameworks.</em></div>'
+        bottom = '<div class="pill">follow @receptralink for daily <em>frameworks.</em></div>'
     else:
         bottom = '<div></div><div class="swipe">SWIPE &rarr;</div>'
     return PAGE.format(
@@ -113,6 +113,6 @@ PERF = [
      "body": "Save this for the next time a shiny idea calls."},
 ]
 
-write_set("carousel-branded", "#D9785B", "your brand / build in public", BRANDED)
-write_set("carousel-performance", "#E16259", "your brand / founder story", PERF)
+write_set("carousel-branded", "#D9785B", "Receptralink / build in public", BRANDED)
+write_set("carousel-performance", "#E16259", "Receptralink / founder story", PERF)
 print("done")

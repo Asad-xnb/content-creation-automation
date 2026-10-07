@@ -40,18 +40,18 @@ Apply this decision tree before generating any infographic HTML:
 All five formats share the visual language so they read as one brand:
 
 **Palette (default warm cream):**
-- Background: `#F5EFE8`
-- Accent primary: `#E63946` (coral red)
-- Accent secondary: `#1A1A1A` (ink)
+- Background: `#0B0F12`
+- Accent primary: `#16AA79` (coral red)
+- Accent secondary: `#FFFFFF` (ink)
 - Soft accent: `#C5392E` (deep coral)
 - Tertiary: `#E8A33D` (mustard, used sparingly)
-- Text body: `#1A1A1A`
-- Text muted: `#5A5A5A`
+- Text body: `#FFFFFF`
+- Text muted: `#A0A8B0`
 
 **Alt palette (dark mode, for hot-take data):**
-- Background: `#1A1A1A`
-- Accent: `#E63946`
-- Text body: `#F5EFE8`
+- Background: `#FFFFFF`
+- Accent: `#16AA79`
+- Text body: `#0B0F12`
 - Soft: `#2A2A2A`
 
 **Typography:**
@@ -64,7 +64,7 @@ All five formats share the visual language so they read as one brand:
 - Title: 64-72px, sentence case, italic serif accent word in coral
 - Subtitle: 18-22px, soft muted text
 - Footer: 1px divider, source attribution left, handle right
-- Always include `@your_handle` in the bottom-right footer
+- Always include `@receptralink` in the bottom-right footer
 - 1080 x 1080 canvas
 
 **Writing rules:**

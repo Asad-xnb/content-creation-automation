@@ -3,8 +3,8 @@
 Writes 7 slides to temp/carousel-performance/."""
 import os
 BASE = os.path.dirname(os.path.abspath(__file__))
-ACCENT = "#E63946"
-KICK = "your brand / future of work"
+ACCENT = "#16AA79"
+KICK = "Receptralink / future of work"
 
 PAGE = """<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/>
 <meta name="viewport" content="width=1080"/>
@@ -32,7 +32,7 @@ body{{width:1080px;height:1080px;overflow:hidden;background:#F8F7F3;color:#111;f
 .pill em{{font-family:'Instrument Serif',serif;font-style:italic;color:{accent};font-weight:400;margin-left:6px}}
 </style></head><body>
 <div class="header"><div class="hleft"><span class="dot"></span>{kick}</div>
-<div class="hright"><div class="fw">your brand / 2026</div><div class="badge">{num}</div></div></div>
+<div class="hright"><div class="fw">Receptralink / 2026</div><div class="badge">{num}</div></div></div>
 <div class="content">{inner}</div>
 <div class="bottom">{bottom}</div>
 </body></html>"""
