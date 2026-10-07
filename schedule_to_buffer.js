@@ -1,24 +1,54 @@
 const https = require('https');
 const fs = require('fs');
+const { execSync } = require('child_process');
 require('dotenv').config();
 
 const TOKEN = process.env.BUFFER_API_KEY;
 const ORG_ID = '6a9fdda2a764a2a7703c5e76';
 
-function createIdea(text) {
+function uploadToCatbox(filePath) {
+  try {
+    const output = execSync(`curl.exe -s -F "reqtype=fileupload" -F "fileToUpload=@${filePath}" https://catbox.moe/user/api.php`);
+    return output.toString().trim();
+  } catch (err) {
+    console.error("Failed to upload to catbox.moe", err.message);
+    return null;
+  }
+}
+
+function createIdea(text, mediaFiles) {
   return new Promise((resolve, reject) => {
+    let mediaInput = "";
+    if (mediaFiles && mediaFiles.length > 0) {
+      let items = mediaFiles.map(file => {
+        const url = uploadToCatbox(file);
+        if (!url) return null;
+        
+        let type = 'image';
+        if (file.toLowerCase().endsWith('.pdf')) type = 'document';
+        else if (file.toLowerCase().endsWith('.mp4')) type = 'video';
+        
+        return `{ type: ${type}, url: "${url}" }`;
+      }).filter(item => item !== null);
+
+      if (items.length > 0) {
+        mediaInput = `, media: [${items.join(', ')}]`;
+      }
+    }
+
     const data = JSON.stringify({
       query: `mutation CreateIdea($orgId: String!, $text: String!) {
         createIdea(input: {
           organizationId: $orgId,
           content: {
             text: $text
+            ${mediaInput}
           }
         }) {
           ... on Idea {
             id
           }
-          ... on GenericError {
+          ... on BasicError {
             message
           }
         }
@@ -56,26 +86,44 @@ function createIdea(text) {
 
 async function main() {
   const args = process.argv.slice(2);
-  if (args.length === 0) {
-    console.log("Usage: node schedule_to_buffer.js <file_with_text>");
+  let textFile = null;
+  let mediaFiles = [];
+
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === '--media') {
+      mediaFiles.push(args[++i]);
+    } else if (args[i] === '--text') {
+      textFile = args[++i];
+    } else {
+      if (!textFile) textFile = args[i];
+    }
+  }
+
+  if (!textFile) {
+    console.log("Usage: node schedule_to_buffer.js <file_with_text> [--media <file.png>]");
     process.exit(1);
   }
 
-  const file = args[0];
-  if (!fs.existsSync(file)) {
-    console.error("File not found:", file);
-    process.exit(1);
+  let text = '';
+  if (fs.existsSync(textFile)) {
+    text = fs.readFileSync(textFile, 'utf8').trim();
+  } else {
+    // maybe it's just raw text passed in
+    text = textFile; 
   }
 
-  const text = fs.readFileSync(file, 'utf8').trim();
   if (!text) {
-    console.log("Empty file, skipping.");
+    console.log("Empty text, skipping.");
     return;
   }
 
-  console.log(`Scheduling to Buffer (${file})...`);
+  console.log(`Scheduling to Buffer...`);
+  if (mediaFiles.length > 0) {
+    console.log(`With media: ${mediaFiles.join(', ')}`);
+  }
+
   try {
-    const result = await createIdea(text);
+    const result = await createIdea(text, mediaFiles);
     if (result.errors || (result.data && result.data.createIdea && result.data.createIdea.message)) {
       console.error("Error creating idea:", JSON.stringify(result, null, 2));
     } else {

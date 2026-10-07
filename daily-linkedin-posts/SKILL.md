@@ -346,25 +346,40 @@ The 5 posts (in the report's proven priority order):
 
 ---
 
-## STEP 8 — Schedule text posts to Buffer
+## STEP 8 — Schedule to Buffer
 
-Use the `schedule_to_buffer.js` script to schedule each post as an Idea in Buffer.
+Use the `schedule_to_buffer.js` script to schedule each post and its media as an Idea in Buffer.
 For each post generated in Steps 3, 6, and 7, save the post text to a temporary file (e.g. `temp_post.txt`), then run:
 
 ```bash
 node schedule_to_buffer.js temp_post.txt
 ```
 
-Repeat this for:
-- 2 Reddit-based text posts (COLLABORATIVE ARTICLE, POLL)
-- 7 AI News plain-text posts
-- 3 Performance text posts (Contrarian, Loaded Poll, AI News + Implications)
-- The Carousel caption (PERF 4)
-- The Data Visual caption (PERF 5)
-- The main Carousel caption
-- The main Infographic caption
+**For the visuals (Carousels and Infographics):**
+You must include the generated PDFs or PNGs using the `--media` flag so they are automatically uploaded and attached to the Buffer Idea. The script handles uploading them to a temporary host and passing the URL to the Buffer API.
 
-*(Note: Because Buffer GraphQL `CreateIdea` media uploads require hosted URLs, the raw image/PDF files will remain local, but their captions will be scheduled as ideas in Buffer.)*
+```bash
+YDATE=$(date +%Y-%m-%d)
+DATE=$(date +%Y%m%d)
+
+# Main Carousel PDF
+MAIN_PDF=$(ls ./carousel-routine/output/$YDATE/carousel-branded/*.pdf 2>/dev/null | head -1)
+node schedule_to_buffer.js temp_carousel_caption.txt --media "$MAIN_PDF"
+
+# Main Infographic PNG
+node schedule_to_buffer.js temp_infographic_caption.txt --media "./linkedin-infographic-$DATE.png"
+
+# Performance Carousel PDF (if generated)
+PERF_PDF=$(ls ./carousel-routine/output/$YDATE/carousel-performance/*.pdf 2>/dev/null | head -1)
+if [ -n "$PERF_PDF" ]; then
+  node schedule_to_buffer.js temp_perf_carousel_caption.txt --media "$PERF_PDF"
+fi
+
+# Performance Data Visual PNG (if generated)
+if [ -f "./linkedin-performance-infographic-$DATE.png" ]; then
+  node schedule_to_buffer.js temp_perf_infographic_caption.txt --media "./linkedin-performance-infographic-$DATE.png"
+fi
+```
 
 ---
 
@@ -386,11 +401,11 @@ Daily LinkedIn Content — {DATE}
 Reddit-based posts (4):
 ...
 ✓ Interactive Newspaper HTML → Generated (Downloads)
-✓ Carousel → Captions scheduled to Buffer
-✓ Infographic → Caption scheduled to Buffer
+✓ Carousel → Scheduled to Buffer (with PDF)
+✓ Infographic → Scheduled to Buffer (with PNG)
 Performance-driven posts (5):
 ✓ Contrarian + Loaded Poll + AI-news (text) → Scheduled to Buffer
-✓ Story carousel → Caption scheduled to Buffer
-✓ Data visual → Caption scheduled to Buffer
+✓ Story carousel → Scheduled to Buffer (with PDF)
+✓ Data visual → Scheduled to Buffer (with PNG)
 ...
 ```
