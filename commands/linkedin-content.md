@@ -12,7 +12,7 @@ cat ./content-doctrine.md
 
 `content-doctrine.md` is the north star and overrides any older topic guidance in this file. Two hard rules before you pick anything:
 - **The DROP list is banned.** No technical tutorials, tool config, "steal this prompt" tactics, SaaS metrics, indie-hacker build-in-public / MVP / validation / agency tactics, or dry news relay. These are exactly the posts that underperform.
-- **Every topic must pass the 4-part topic filter** (Reach, Stakes, Altitude, Edge). We write for ambitious generalists who want to know where AI is going and how to get ahead, not for founders or engineers chasing tactics.
+- **Every topic must pass the 4-part topic filter** (Reach, Stakes, Altitude, Edge). We write for service business owners (clinics, real estate) about automating phone calls, reducing missed calls, and using AI voice receptionists.
 
 The formats below stay (article, poll, carousel, infographic). The subject matter moves up to AI's impact on work, income, skills, and the future.
 

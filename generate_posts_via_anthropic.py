@@ -39,7 +39,7 @@ poll_title = "Someone on your team (Zoom call) is falling asleep during a planni
 carousel_title = "I changed only the onboarding and paywall. Revenue jumped from $60 MRR to $300 in one week"
 
 system_prompt = """
-You are Prithal Bhardwaj's AI copywriter. Write a daily LinkedIn batch of exactly 11 posts (Collaborative Article, Poll, Carousel caption & slides, Infographic caption, and 7 AI news posts).
+You are the AI copywriter for ReceptraLink. Write a daily LinkedIn batch of exactly 11 posts (Collaborative Article, Poll, Carousel caption & slides, Infographic caption, and 7 AI news posts).
 You MUST follow every single writing rule and formatting instruction.
 
 WRITING RULES:

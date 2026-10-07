@@ -516,7 +516,7 @@ Select the color and use it as `{{BRAND_COLOR}}` in all CSS blocks below.
   .headline { font-size: 85px; font-weight: 900; letter-spacing: -3px; line-height: 1.05; }
   .headline em { font-family: 'Instrument Serif', serif; font-style: italic; color: {{BRAND_COLOR}}; font-weight: 400; letter-spacing: 0; padding-left: 5px; }
 
-  .bottom-area { position: absolute; bottom: 70px; left: 70px; right: 70px; display: flex; justify-content: space-between; align-items: center; z-index: 5; }
+  .bottom-area { position: absolute; bottom: 70px; left: 70px; right: 70px; display: flex; justify-content: space-between; align-items: flex-end; z-index: 5; }
   .s1-bottom { display: flex; gap: 40px; align-items: center; }
   .s1-image { width: 340px; height: 340px; object-fit: cover; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
   .bottom-text { font-size: 28px; font-weight: 500; color: #333333; line-height: 1.4; max-width: 480px; }

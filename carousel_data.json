@@ -1,0 +1,60 @@
+{
+  "1": {
+    "HEADER_LABEL": "THE NEW HIRING MOAT",
+    "HOOK_PART_1": "Companies don't hire",
+    "HOOK_PART_2": "you for answers",
+    "HOOK_EMPHASIS": "anymore",
+    "SUBTITLE": "AI has commoditized the ability to retrieve information. The market rate for raw knowledge is now approaching zero. Here is what they are paying for instead."
+  },
+  "2": {
+    "PILL_LABEL": "THE SHIFT",
+    "EYEBROW": "COMMODITIZED KNOWLEDGE",
+    "HEADLINE_PART_1": "Answers are cheap.",
+    "HEADLINE_PART_2": "Taste and judgment",
+    "HEADLINE_EMPHASIS": "are rare.",
+    "IMAGE_FILENAME": "hero-ui.png",
+    "BODY_TEXT": "When an AI can pass the bar exam, diagnose a disease, and write boilerplate code in seconds, the value of memorization drops. You are no longer competing on what you know."
+  },
+  "3": {
+    "PILL_LABEL": "THE REAL VALUE",
+    "EYEBROW": "ASKING THE RIGHT QUESTIONS",
+    "HEADLINE_PART_1": "The prompt is",
+    "HEADLINE_PART_2": "the new",
+    "HEADLINE_EMPHASIS": "blueprint",
+    "BODY_TEXT": "The person who can frame the right problem, define the boundary conditions, and ask the sharpest questions is the one commanding the premium."
+  },
+  "4": {
+    "PILL_LABEL": "THE DATA",
+    "EYEBROW": "MARKET TRENDS",
+    "HEADLINE_PART_1": "Executives admit",
+    "HEADLINE_PART_2": "they are shifting",
+    "HEADLINE_EMPHASIS": "budgets",
+    "IMAGE_FILENAME": "interface.png",
+    "BODY_TEXT": "Recent surveys show 80% of hiring managers are pivoting from hard technical screening to behavioral judgment screening."
+  },
+  "5": {
+    "PILL_LABEL": "THE TACTIC",
+    "EYEBROW": "HOW TO PIVOT",
+    "HEADLINE_PART_1": "Stop selling",
+    "HEADLINE_PART_2": "your hard",
+    "HEADLINE_EMPHASIS": "skills",
+    "BODY_TEXT": "Instead of listing the coding languages or frameworks you know, start building a portfolio of complex problems you diagnosed and solved. Sell the judgment."
+  },
+  "6": {
+    "NUMBER": "06",
+    "EYEBROW": "THE FUTURE IS HERE",
+    "HEADLINE_PART_1": "Taste cannot",
+    "HEADLINE_PART_2": "be safely",
+    "HEADLINE_EMPHASIS": "outsourced.",
+    "IMAGE_FILENAME": "hero-ui.png",
+    "BODY_TEXT": "AI gives you the options. A human must still decide which option aligns with the company's risk profile, brand, and strategy."
+  },
+  "7": {
+    "LABEL_TOP": "RECEPTRALINK",
+    "BIG_TEXT_PART_1": "Adapt",
+    "BIG_TEXT_PART_2": "or become",
+    "BIG_TEXT_EMPHASIS": "irrelevant",
+    "BODY_TEXT": "The transition is quiet but total. Are you building the skills that AI cannot commoditize?",
+    "CALL_TO_ACTION": "Save this post and rethink your resume."
+  }
+}
