@@ -37,7 +37,7 @@ function createIdea(text, mediaFiles) {
     }
 
     const data = JSON.stringify({
-      query: `mutation CreateIdea($orgId: String!, $text: String!) {
+      query: `mutation CreateIdea($orgId: ID!, $text: String!) {
         createIdea(input: {
           organizationId: $orgId,
           content: {
@@ -48,9 +48,7 @@ function createIdea(text, mediaFiles) {
           ... on Idea {
             id
           }
-          ... on BasicError {
-            message
-          }
+          
         }
       }`,
       variables: {

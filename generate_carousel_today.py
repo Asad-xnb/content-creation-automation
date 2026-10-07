@@ -50,8 +50,8 @@ def ensure_valid_images():
 # Run asset verification first
 ensure_valid_images()
 
-skill_path = "/Users/prithal/.gemini/config/skills/branded-carousel/SKILL.md"
-with open(skill_path, "r") as f:
+skill_path = "./skills/branded-carousel/SKILL.md"
+with open(skill_path, "r", encoding="utf-8") as f:
     content = f.read()
 
 # Extract templates
@@ -65,7 +65,7 @@ out_dir = "./carousel-routine/temp/carousel-branded"
 os.makedirs(out_dir, exist_ok=True)
 
 # Linear Purple Color
-color = "#5E6AD2"
+color = "#16AA79"
 
 # Load dynamic carousel data if exists
 json_data = {}
@@ -161,7 +161,7 @@ for slide_num, (template, replacements) in data.items():
         html = html.replace(k, v)
     # Correct template 3 & 5 replacement bugs if any (e.g. circle word 2)
     html = html.replace("{{CIRCLE_WORD_2}}", replacements.get("{{CIRCLE_WORD_2}}", "LOST" if slide_num=="3" else "JUMP"))
-    with open(f"{out_dir}/slide-0{slide_num}.html", "w") as f:
+    with open(f"{out_dir}/slide-0{slide_num}.html", "w", encoding="utf-8") as f:
         f.write(html)
 
 print("Generated 7 HTML slides successfully in temp/carousel-branded.")
