@@ -1,0 +1,32 @@
+[
+  {
+    "type": "RANKED_BARS",
+    "filePath": "D:\\VS Workspace\\daily-linkedin-posts-pipeline\\output\\infographics\\01_ranked_bars.png",
+    "title": "Type: RANKED_BARS — Where Missed Calls Hurt the Most",
+    "description": "A ranked breakdown analyzing inbound call loss rates across high-ticket service industries, highlighting why clinics, real estate, and legal practices bleed the most revenue from unanswered calls."
+  },
+  {
+    "type": "DONUT_BREAKDOWN",
+    "filePath": "D:\\VS Workspace\\daily-linkedin-posts-pipeline\\output\\infographics\\02_donut_breakdown.png",
+    "title": "Type: DONUT_BREAKDOWN — What Happens to an Unanswered Call?",
+    "description": "A distribution breakdown illustrating customer behavior immediately after reaching voicemail or being placed on hold, showing that 67% dial a direct competitor right away."
+  },
+  {
+    "type": "TIMELINE_SHIFT",
+    "filePath": "D:\\VS Workspace\\daily-linkedin-posts-pipeline\\output\\infographics\\03_timeline_shift.png",
+    "title": "Type: TIMELINE_SHIFT — Front Desk Speed: 2021 vs 2026",
+    "description": "A timeline shift showcasing how inbound response times collapsed from hours of voicemail backlogs to 3-second instant conversational AI pickups."
+  },
+  {
+    "type": "COMPARISON_SPLIT",
+    "filePath": "D:\\VS Workspace\\daily-linkedin-posts-pipeline\\output\\infographics\\04_comparison_split.png",
+    "title": "Type: COMPARISON_SPLIT — Legacy IVR vs AI Voice Agent",
+    "description": "A head-to-head operational comparison between frustrating automated phone trees (\"Press 1 for Sales\") and autonomous conversational AI receptionists."
+  },
+  {
+    "type": "HERO_NUMBER",
+    "filePath": "D:\\VS Workspace\\daily-linkedin-posts-pipeline\\output\\infographics\\05_hero_number.png",
+    "title": "Type: HERO_NUMBER — The $126k Cost of Missed Inbound Calls",
+    "description": "A single massive figure highlighting the $126,000 annual revenue loss experienced by mid-market clinics and service firms due to uncaptured inbound calls."
+  }
+]

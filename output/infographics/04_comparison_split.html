@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=1080"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background-color: #0B0F12; color: #FFFFFF;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    padding: 64px 72px 52px; position: relative;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .topbar { display: flex; justify-content: space-between; align-items: center; }
+  .kicker { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: #E0E6ED; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; background: #16AA79; box-shadow: 0 0 10px rgba(22, 170, 121, 0.6); }
+  .topright { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 26px; color: #A0A8B0; }
+
+  .header-block { margin-top: 10px; }
+  .title { font-size: 64px; font-weight: 900; line-height: 1.1; letter-spacing: -2px; color: #FFFFFF; }
+  .title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: #16AA79; }
+  .subtitle { margin-top: 12px; font-size: 20px; color: #A0A8B0; line-height: 1.4; max-width: 900px; font-weight: 500; }
+
+  .columns-header { display: flex; gap: 24px; margin-top: 24px; }
+  .col-head { flex: 1; padding: 14px 20px; border-radius: 12px; text-align: center; font-size: 18px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; }
+  .head-left { background: #1A2026; color: #A0A8B0; }
+  .head-right { background: #10241F; color: #16AA79; border: 1px solid #16AA79; }
+
+  .rows-stack { display: flex; flex-direction: column; gap: 16px; margin: 16px 0 24px; }
+  .comp-row { display: flex; align-items: center; gap: 24px; background: #141A20; border: 1px solid #232B33; border-radius: 16px; padding: 18px 24px; position: relative; }
+  
+  .col-val-left { flex: 1; text-align: center; }
+  .val-num-left { font-size: 34px; font-weight: 900; color: #E0E6ED; }
+  .val-sub-left { font-size: 13px; color: #8A929A; margin-top: 3px; font-weight: 500; }
+
+  .col-label-center { width: 220px; text-align: center; }
+  .metric-tag { font-size: 14px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; color: #A0A8B0; }
+
+  .col-val-right { flex: 1; text-align: center; }
+  .val-num-right { font-size: 34px; font-weight: 900; color: #16AA79; }
+  .val-sub-right { font-size: 13px; color: #CAD1D8; margin-top: 3px; font-weight: 600; }
+
+  .footer { }
+  .divider { height: 1px; background: #2A3238; margin-bottom: 16px; }
+  .footrow { display: flex; justify-content: space-between; align-items: center; }
+  .source { font-size: 13px; color: #8A929A; font-weight: 500; }
+  .handle { font-size: 17px; font-weight: 800; letter-spacing: 0.3px; color: #FFFFFF; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="kicker"><span class="dot"></span>Telephony Architecture · Head to Head</div>
+    <div class="topright">Receptralink</div>
+  </div>
+
+  <div class="header-block">
+    <div class="title">Legacy IVR <em>vs</em> AI Voice Agent.</div>
+    <div class="subtitle">Why business callers abandon push-button phone trees and how conversational front-desk AI changes the numbers.</div>
+  </div>
+
+  <div class="columns-header">
+    <div class="col-head head-left">Legacy IVR Phone Tree ("Press 1")</div>
+    <div class="col-head head-right">Receptralink AI Voice Receptionist</div>
+  </div>
+
+  <div class="rows-stack">
+    <div class="comp-row">
+      <div class="col-val-left">
+        <div class="val-num-left">48%</div>
+        <div class="val-sub-left">Hangs up within 30 seconds</div>
+      </div>
+      <div class="col-label-center">
+        <div class="metric-tag">Call Abandonment</div>
+      </div>
+      <div class="col-val-right">
+        <div class="val-num-right">4%</div>
+        <div class="val-sub-right">Immediate conversational hook</div>
+      </div>
+    </div>
+
+    <div class="comp-row">
+      <div class="col-val-left">
+        <div class="val-num-left">22%</div>
+        <div class="val-sub-left">Must transfer or callback</div>
+      </div>
+      <div class="col-label-center">
+        <div class="metric-tag">First-Call Resolution</div>
+      </div>
+      <div class="col-val-right">
+        <div class="val-num-right">84%</div>
+        <div class="val-sub-right">Answers FAQs & schedules live</div>
+      </div>
+    </div>
+
+    <div class="comp-row">
+      <div class="col-val-left">
+        <div class="val-num-left">3m 42s</div>
+        <div class="val-sub-left">Average queue wait time</div>
+      </div>
+      <div class="col-label-center">
+        <div class="metric-tag">Average Hold Time</div>
+      </div>
+      <div class="col-val-right">
+        <div class="val-num-right">0 sec</div>
+        <div class="val-sub-right">Infinite parallel line capacity</div>
+      </div>
+    </div>
+
+    <div class="comp-row">
+      <div class="col-val-left">
+        <div class="val-num-left">Voicemail</div>
+        <div class="val-sub-left">Zero active triage after 5 PM</div>
+      </div>
+      <div class="col-label-center">
+        <div class="metric-tag">After-Hours Coverage</div>
+      </div>
+      <div class="col-val-right">
+        <div class="val-num-right">24/7/365</div>
+        <div class="val-sub-right">Full booking & emergency triage</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    <div class="footrow">
+      <div class="source">Source: Gartner Customer Service Telecom Benchmark & Receptralink Logs</div>
+      <div class="handle">@receptralink</div>
+    </div>
+  </div>
+</body>
+</html>

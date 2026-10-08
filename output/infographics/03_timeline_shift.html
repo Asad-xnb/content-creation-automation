@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=1080"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background-color: #0B0F12; color: #FFFFFF;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    padding: 64px 72px 52px; position: relative;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .topbar { display: flex; justify-content: space-between; align-items: center; }
+  .kicker { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: #E0E6ED; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; background: #16AA79; box-shadow: 0 0 10px rgba(22, 170, 121, 0.6); }
+  .topright { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 26px; color: #A0A8B0; }
+
+  .header-block { margin-top: 10px; }
+  .title { font-size: 64px; font-weight: 900; line-height: 1.1; letter-spacing: -2px; color: #FFFFFF; }
+  .title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: #16AA79; }
+  .subtitle { margin-top: 12px; font-size: 20px; color: #A0A8B0; line-height: 1.4; max-width: 900px; font-weight: 500; }
+
+  .shift-container { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 24px 0; }
+  
+  .timeline-card { flex: 1; border-radius: 20px; padding: 36px 32px; display: flex; flex-direction: column; justify-content: space-between; height: 460px; position: relative; }
+  .card-past { background: #141A20; border: 1px solid #232B33; }
+  .card-future { background: #10241F; border: 2px solid #16AA79; box-shadow: 0 10px 40px rgba(22, 170, 121, 0.15); }
+
+  .card-era { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 38px; color: #8A929A; }
+  .card-future .card-era { color: #16AA79; }
+  .card-tag { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #8A929A; margin-top: 4px; }
+  .card-future .card-tag { color: #FFFFFF; }
+
+  .metric-box { margin: 24px 0; }
+  .metric-val { font-size: 78px; font-weight: 900; letter-spacing: -3px; line-height: 0.95; }
+  .card-past .metric-val { color: #A0A8B0; }
+  .card-future .metric-val { color: #16AA79; }
+  .metric-lbl { font-size: 15px; font-weight: 600; color: #8A929A; margin-top: 8px; }
+
+  .feature-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .feature-item { font-size: 16px; font-weight: 600; color: #CAD1D8; display: flex; align-items: center; gap: 10px; }
+  .feature-item .icon { font-size: 14px; font-weight: 800; }
+
+  .shift-arrow-box { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; width: 110px; }
+  .badge-drop { background: #16AA79; color: #0B0F12; font-size: 14px; font-weight: 900; padding: 8px 12px; border-radius: 100px; text-transform: uppercase; letter-spacing: 1px; white-space: nowrap; }
+  .arrow-symbol { font-family: 'Instrument Serif', serif; font-size: 56px; color: #16AA79; line-height: 1; }
+
+  .story-bar { background: #141A20; border-radius: 12px; padding: 18px 24px; font-size: 19px; line-height: 1.35; color: #CAD1D8; border: 1px solid #232B33; }
+  .story-bar em { font-family: 'Instrument Serif', serif; font-style: italic; color: #16AA79; font-size: 22px; }
+
+  .footer { }
+  .divider { height: 1px; background: #2A3238; margin-bottom: 16px; }
+  .footrow { display: flex; justify-content: space-between; align-items: center; }
+  .source { font-size: 13px; color: #8A929A; font-weight: 500; }
+  .handle { font-size: 17px; font-weight: 800; letter-spacing: 0.3px; color: #FFFFFF; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="kicker"><span class="dot"></span>Speed-to-Lead · Front Desk Evolution</div>
+    <div class="topright">Receptralink</div>
+  </div>
+
+  <div class="header-block">
+    <div class="title">The speed gap is <em>widening</em>.</div>
+    <div class="subtitle">Average response latency from inbound customer dial to appointment confirmed in practice management software.</div>
+  </div>
+
+  <div class="shift-container">
+    <div class="timeline-card card-past">
+      <div>
+        <div class="card-era">2021</div>
+        <div class="card-tag">Traditional Front Desk</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">4.2 hrs</div>
+        <div class="metric-lbl">Average Callback Window</div>
+      </div>
+      <ul class="feature-list">
+        <li class="feature-item"><span class="icon">✕</span> Heavy voicemail backlog</li>
+        <li class="feature-item"><span class="icon">✕</span> Zero after-hours handling</li>
+        <li class="feature-item"><span class="icon">✕</span> 38% callback connection rate</li>
+      </ul>
+    </div>
+
+    <div class="shift-arrow-box">
+      <div class="badge-drop">99.9% faster</div>
+      <div class="arrow-symbol">→</div>
+    </div>
+
+    <div class="timeline-card card-future">
+      <div>
+        <div class="card-era">2026</div>
+        <div class="card-tag">AI Voice Receptionist</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-val">3 sec</div>
+        <div class="metric-lbl">Instant Live Engagement</div>
+      </div>
+      <ul class="feature-list">
+        <li class="feature-item" style="color:#FFFFFF;"><span class="icon" style="color:#16AA79;">✓</span> Zero wait time on ring #1</li>
+        <li class="feature-item" style="color:#FFFFFF;"><span class="icon" style="color:#16AA79;">✓</span> 24/7 calendar booking live</li>
+        <li class="feature-item" style="color:#FFFFFF;"><span class="icon" style="color:#16AA79;">✓</span> 100% inbound capture rate</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="story-bar">
+    Inbound callers answered in under 60 seconds convert at <em>9x the rate</em> of callers phoned back after an hour. Speed is retention.
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    <div class="footrow">
+      <div class="source">Source: Harvard Business Review Lead Response Audit & Receptralink Benchmarks</div>
+      <div class="handle">@receptralink</div>
+    </div>
+  </div>
+</body>
+</html>

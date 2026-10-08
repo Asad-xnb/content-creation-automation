@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=1080"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background-color: #0B0F12; color: #FFFFFF;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    padding: 64px 72px 52px; position: relative;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .topbar { display: flex; justify-content: space-between; align-items: center; }
+  .kicker { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 800; letter-spacing: 2.2px; text-transform: uppercase; color: #E0E6ED; }
+  .dot { width: 12px; height: 12px; border-radius: 50%; background: #16AA79; box-shadow: 0 0 10px rgba(22, 170, 121, 0.6); }
+  .topright { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 26px; color: #A0A8B0; }
+
+  .header-block { margin-top: 10px; }
+  .title { font-size: 64px; font-weight: 900; line-height: 1.1; letter-spacing: -2px; color: #FFFFFF; }
+  .title em { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; color: #16AA79; }
+  .subtitle { margin-top: 12px; font-size: 20px; color: #A0A8B0; line-height: 1.4; max-width: 900px; font-weight: 500; }
+
+  .bars-container { display: flex; flex-direction: column; gap: 20px; margin: 28px 0; }
+  .bar-item { display: flex; align-items: center; gap: 20px; }
+  .rank { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 32px; color: #16AA79; width: 44px; text-align: left; }
+  .bar-content { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .bar-meta { display: flex; justify-content: space-between; align-items: baseline; }
+  .bar-label { font-size: 20px; font-weight: 700; color: #FFFFFF; letter-spacing: -0.3px; }
+  .bar-val { font-size: 22px; font-weight: 800; color: #FFFFFF; }
+  .bar-track { width: 100%; height: 14px; background: #1A2026; border-radius: 7px; overflow: hidden; position: relative; }
+  .bar-fill { height: 100%; border-radius: 7px; }
+  .fill-top { background: linear-gradient(90deg, #16AA79, #20C997); }
+  .fill-mid { background: linear-gradient(90deg, #E8A33D, #F5B041); }
+  .fill-low { background: #3A444C; }
+
+  .footer { }
+  .divider { height: 1px; background: #2A3238; margin-bottom: 16px; }
+  .footrow { display: flex; justify-content: space-between; align-items: center; }
+  .source { font-size: 13px; color: #8A929A; font-weight: 500; }
+  .handle { font-size: 17px; font-weight: 800; letter-spacing: 0.3px; color: #FFFFFF; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="kicker"><span class="dot"></span>Inbound Loss Audit · Service Benchmark</div>
+    <div class="topright">Receptralink</div>
+  </div>
+
+  <div class="header-block">
+    <div class="title">Where missed calls hurt the <em>most</em>.</div>
+    <div class="subtitle">Percentage of incoming customer calls that go unanswered across high-ticket service industries during standard business hours.</div>
+  </div>
+
+  <div class="bars-container">
+    <div class="bar-item">
+      <div class="rank">01</div>
+      <div class="bar-content">
+        <div class="bar-meta">
+          <span class="bar-label">Real Estate Agencies & Brokerages</span>
+          <span class="bar-val">44%</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-top" style="width: 100%;"></div></div>
+      </div>
+    </div>
+    <div class="bar-item">
+      <div class="rank">02</div>
+      <div class="bar-content">
+        <div class="bar-meta">
+          <span class="bar-label">Dental & Specialist Medical Clinics</span>
+          <span class="bar-val">38%</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-top" style="width: 86.4%;"></div></div>
+      </div>
+    </div>
+    <div class="bar-item">
+      <div class="rank">03</div>
+      <div class="bar-content">
+        <div class="bar-meta">
+          <span class="bar-label">Legal Practices & Client Intake</span>
+          <span class="bar-val">32%</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-top" style="width: 72.7%;"></div></div>
+      </div>
+    </div>
+    <div class="bar-item">
+      <div class="rank">04</div>
+      <div class="bar-content">
+        <div class="bar-meta">
+          <span class="bar-label">HVAC & Emergency Home Services</span>
+          <span class="bar-val">29%</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-mid" style="width: 65.9%;"></div></div>
+      </div>
+    </div>
+    <div class="bar-item">
+      <div class="rank">05</div>
+      <div class="bar-content">
+        <div class="bar-meta">
+          <span class="bar-label">Financial & Wealth Advisory</span>
+          <span class="bar-val">23%</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-mid" style="width: 52.3%;"></div></div>
+      </div>
+    </div>
+    <div class="bar-item">
+      <div class="rank">06</div>
+      <div class="bar-content">
+        <div class="bar-meta">
+          <span class="bar-label">Automotive Dealership Service Desks</span>
+          <span class="bar-val">19%</span>
+        </div>
+        <div class="bar-track"><div class="bar-fill fill-low" style="width: 43.2%;"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="divider"></div>
+    <div class="footrow">
+      <div class="source">Source: Receptralink Industry Inbound Audit (20,000+ logged service calls)</div>
+      <div class="handle">@receptralink</div>
+    </div>
+  </div>
+</body>
+</html>
