@@ -9,9 +9,31 @@ def ensure_valid_images():
     os.makedirs(assets_dir, exist_ok=True)
     
     # Fallback mappings for onboarding/conversion themes
+    import random
+    import urllib.request
+    import json
+    
+    image_pool = []
+    try:
+        import subprocess
+        result = subprocess.run(["curl.exe", "-s", "https://unsplash.com/napi/search/photos?query=business,reception,technology&per_page=30"], capture_output=True)
+        data = json.loads(result.stdout.decode('utf-8'))
+        for result in data.get('results', []):
+            if 'urls' in result and 'regular' in result['urls']:
+                image_pool.append(result['urls']['regular'])
+    except Exception as e:
+        print("Failed to fetch dynamic images from Unsplash API:", e)
+        
+    if not image_pool:
+        image_pool = [
+            "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1080&q=80",
+            "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1080&q=80"
+        ]
+        
+    random.shuffle(image_pool)
     fallbacks = {
-        "hero-ui.png": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1080&q=80",
-        "interface.png": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1080&q=80"
+        "hero-ui.png": image_pool[0],
+        "interface.png": image_pool[1] if len(image_pool) > 1 else image_pool[0]
     }
     
     ctx = ssl.create_default_context()
@@ -20,32 +42,18 @@ def ensure_valid_images():
     
     for filename, url in fallbacks.items():
         file_path = os.path.join(assets_dir, filename)
-        is_valid = False
-        
-        if os.path.exists(file_path):
-            size = os.path.getsize(file_path)
-            if size > 10000:
-                try:
-                    with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
-                        header = f.read(100)
-                        if not ("<html" in header.lower() or "<!doctype" in header.lower()):
-                            is_valid = True
-                except Exception:
-                    is_valid = True
-                    
-        if not is_valid:
-            print(f"Asset '{filename}' is missing or invalid. Downloading fallback from {url}...")
-            try:
-                req = urllib.request.Request(
-                    url, 
-                    headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
-                )
-                with urllib.request.urlopen(req, context=ctx) as response:
-                    with open(file_path, "wb") as f:
-                        f.write(response.read())
-                print(f"Successfully downloaded fallback for '{filename}'.")
-            except Exception as e:
-                print(f"Error downloading fallback for {filename}: {e}")
+        print(f"Downloading new dynamic image for '{filename}' from {url}...")
+        try:
+            req = urllib.request.Request(
+                url, 
+                headers={"User-Agent": "Mozilla/5.0"}
+            )
+            with urllib.request.urlopen(req, context=ctx) as response:
+                with open(file_path, "wb") as f:
+                    f.write(response.read())
+            print(f"Successfully downloaded '{filename}'.")
+        except Exception as e:
+            print(f"Error downloading fallback for {filename}: {e}")
 
 # Run asset verification first
 ensure_valid_images()
